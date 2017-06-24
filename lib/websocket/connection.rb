@@ -36,6 +36,10 @@ class WebSocket::Connection
     !@stream.closed?
   end
   
+  def state
+    @driver.state
+  end
+  
   def on(event, callable = nil, &block)
     @driver.on(event, callable, &block)
   end
