@@ -59,7 +59,7 @@ class WebSocket::Connection
   
   def read
     @driver.parse(@stream.readpartial(256))
-  rescue EOFError
+  rescue EOFError, IOError
   end
 
   
